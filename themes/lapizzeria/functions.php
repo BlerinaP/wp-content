@@ -13,7 +13,8 @@ add_action('wp_enqueue_scripts','lapizzeria_styles');
 //Add menus
 function lapizzeria_menus(){
   register_nav_menus(array(
-     'header-menu' => __('Header Menu','lapizza')
+     'header-menu' => __('Header Menu','lapizza'),
+      'social-menu' => __('Social Menu','lapizza')
   ));
 }
 add_action('init','lapizzeria_menus');
