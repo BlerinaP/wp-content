@@ -9,6 +9,15 @@ function lapizzeria_styles(){
     wp_enqueue_style('normalize');
     wp_enqueue_style('fontawesome');
     wp_enqueue_style('style');
+
+
+    //adding scripts//
+    wp_register_script('script',get_template_directory_uri() . '/js/scripts.js','1.0.0' ,true);
+
+    //Than we have to enqueue java scripts files that has been registered//
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('script');
+
 }
 add_action('wp_enqueue_scripts','lapizzeria_styles');
 
