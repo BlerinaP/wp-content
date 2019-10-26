@@ -89,3 +89,43 @@ div.address p{
         text-align: right;
     }
 }
+/**Social Menu**/
+nav.socials ul{
+    list-style: none;
+    text-align: center;
+    padding:0;
+}
+@media only screen and (min-width: 765px){
+    nav.socials ul{
+        float: right;
+    }
+}
+nav.socials ul li{
+    position: relative;
+    display: inline-block;
+}
+nav.socials ul li a:before{
+    font-family: 'FontAwesome';
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 5px;
+    content: '\f08e';
+    font-size: 30px;
+    color: #000000;
+    -webkit-font-smoothing: antialiased;
+}
+nav.socials li a[href*="facebook.com"]::before{
+    content:'\f09a';
+}
+nav.socials li a[href*="twitter.com"]::before{
+    content:'\f099';
+}
+nav.socials li a[href*="pinterest.com"]::before{
+    content:'\f231';
+}
+nav.socials li a[href*="youtube.com"]::before{
+    content:'\f16a';
+}
+nav.socials li a[href*="instagram.com"]::before{
+    content:'\f16d';
+}
