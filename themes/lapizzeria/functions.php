@@ -1,4 +1,12 @@
 <?php
+//Add feature image
+function lapizzeria_setup(){
+    add_theme_support('post-thumbnails');
+
+    add_image_size('boxes', 437, 291, true);
+}
+add_action('after_setup_theme','lapizzeria_setup');
+
 function lapizzeria_styles(){
     // adding stylesheet( register stylesheet)
     wp_register_style('normalize', get_template_directory_uri() . '/css/normalize.css',array(), '8.0.0');
@@ -31,3 +39,4 @@ function lapizzeria_menus(){
   ));
 }
 add_action('init','lapizzeria_menus');
+
