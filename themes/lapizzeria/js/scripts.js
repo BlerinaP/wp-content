@@ -2,7 +2,16 @@ $ = jQuery.noConflict();
 
 $(document).ready(function() {
     $('.mobile-menu a').on('click',function(){
-        alert("you clicked the button");
-    })
+        $('nav.site-nav').toggle('slow');
+    });
+
+    var breakpoint = 768;
+    $(window).resize(function(){
+       if($(document).width() >= breakpoint){
+           $('nav.site-nav').show();
+       }else{
+           $('nav.site-nav').hide();
+       }
+    });
 });
 
