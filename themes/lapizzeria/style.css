@@ -20,6 +20,7 @@ body{
 *, *:before, *:after{
     box-sizing: inherit;
 }
+
 h1, h2, h3, h4, h5{
     font-family: 'Raleway', sans-serif;
     font-weight: 900;
@@ -251,3 +252,69 @@ nav.site-nav ul li.current_page_item a{
     line-height: 50px;
 }
 
+/**BOXES**/
+.box-information{
+    display: grid;
+    justify-content: center;
+}
+
+@media screen and (min-width: 768px){
+    .box-information{
+     grid-template-columns: repeat(3, 1fr);
+    }
+}
+.single-box{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    color: white;
+    text-align: center;
+}
+@media screen and (min-width: 768px){
+    .single-box{
+        grid-template-columns: unset;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+.single-box:nth-child(1){
+    background-color: #f19f30;
+}
+.single-box:nth-child(2){
+    background-color: #127427;
+}
+.single-box:nth-child(3){
+    background-color: #a61206;
+}
+@media screen and (min-width: 768px){
+    .single-box:nth-child(2) img{
+     order: 2;
+    }
+    .single-box:nth-child(2) div{
+      order: 1;
+    }
+}
+.content-box{
+    display: grid;
+    grid-template-rows: 10% 20% 60% 10%;
+    grid-template-areas: "."
+                         "top"
+                         "text"
+                         ".";
+}
+.content-box *{
+    align-self: center;
+}
+@media screen and (min-width: 768px){
+    .content-box{
+        grid-template: 20% 30% 30% 20%;
+    }
+}
+.content-box h3{
+    grid-area: top;
+    margin: 5px 0;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.content-box p{
+    grid-area: text;
+}
