@@ -50,6 +50,9 @@ h4{
 .sr-text{
     display: none;
 }
+.text-center{
+    text-align: center;
+}
 
 /**Header**/
 header.site-header{
@@ -225,9 +228,26 @@ nav.site-nav ul li.current_page_item a{
     z-index: 2;
     position: relative;
 }
-
+@media only screen and(min-width: 768px) {
+    .hero-text{
+        width: 80%;
+        margin: 0 auto;
+    }
+}
 @media only screen and(min-width: 992px) {
     .hero-text{
         width: 60%;
     }
 }
+
+.main-content{
+    padding: 60px;
+    background-color: white;
+    position: relative;
+    margin-top: -90px;
+}
+.content-text p{
+    font-size: 18px;
+    line-height: 50px;
+}
+
