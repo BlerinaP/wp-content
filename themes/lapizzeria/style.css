@@ -12,9 +12,17 @@
 */
 html{
     box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    margin: 0;
 }
 *, *:before, *:after{
     box-sizing: inherit;
+}
+h1, h2, h3, h4, h5{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
 }
 h1{
     font-size: 48px;
@@ -160,7 +168,7 @@ nav.site-nav ul{
     text-decoration: none;
     text-transform: uppercase;
     color: #000000;
-    font-family: arial,Helvetica;
+    font-family: 'Raleway', sans-serif;
     }
 
 nav.site-nav ul li.current_page_item a{
@@ -181,6 +189,7 @@ nav.site-nav ul li.current_page_item a{
     text-align: center;
     font-size: 20px;
     text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
   }
 }
 @media only screen and (min-width: 768px){
