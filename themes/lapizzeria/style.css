@@ -178,7 +178,8 @@ nav.site-nav ul{
     font-family: 'Raleway', sans-serif;
     }
 
-nav.site-nav ul li.current_page_item a{
+nav.site-nav ul li.current_page_item a,
+.single-specialties nav.site-nav ul li.menu-item-29 a{
     border-bottom: 8px solid #a61206;
 }
 
@@ -419,4 +420,20 @@ img{
 .specialty-content p{
     color: #3d3d3d;
     line-height: 30px;
+}
+/*Single specialty template*/
+ .single-specialties p.ingridients{
+     color: #a61206;
+     font-size: 30px;
+     margin: 0;
+ }
+ .single-specialties p.price{
+     color: #a61206;
+     font-size: 30px;
+     margin: 0;
+     font-weight: bold;
+     background-color: wheat;
+ }
+ .single-specialties p.price span{
+    color: black;
 }
