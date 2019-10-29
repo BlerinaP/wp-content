@@ -79,3 +79,16 @@ function lapizzeria_specialties() {
     register_post_type( 'specialties', $args );
 }
 add_action( 'init', 'lapizzeria_specialties' );
+
+//Widget Zone//
+function lapizzeria_widgets(){
+    register_sidebar(array(
+        'name' => 'Blog Sidebar',
+        'id' => 'blog_sidebar',
+        'before_widget' => '<div class="widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4>',
+        'after_title' => '</h4>'
+    ));
+}
+add_action('widgets_init','lapizzeria_widgets');
