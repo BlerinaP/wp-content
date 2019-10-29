@@ -57,6 +57,26 @@ h4{
 .primary-text {
     color: #a61206;
 }
+.button{
+    background-color: #850700;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    width: auto;
+    border-radius: 8px;
+    color: white;
+    padding: 15px 80px;
+    margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+.primary{
+    background-color: #850700;
+    transition: background-color .5s ease;
+}
+.primary:hover{
+    background-color: #a61206;
+}
 
 /**Header**/
 header.site-header{
@@ -387,7 +407,7 @@ img{
     .columns1-3{
         width: 33.3%;
     }
-    .columns3-3{
+    .columns2-3{
         width:66.6%;
     }
 
@@ -436,4 +456,55 @@ img{
  }
  .single-specialties p.price span{
     color: black;
+}
+
+ /*Blog*/
+article.entry{
+    margin-top: 30px;
+}
+header.entry-header{
+    margin-top: 20px;
+}
+header.entry-header .date{
+    background-color: #f19f30;
+    float: left;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    padding-top: 5px;
+    margin-right: 20px;
+}
+header.entry-header .date time{
+    font-size: 30px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+header.entry-header .date span{
+  font-size: 16px;
+    display: block;
+    text-transform: uppercase;
+}
+header.entry-header .entry-title{
+    float: right;
+    width: calc(100% - 90px);
+}
+header.entry-header h2{
+    margin: 0;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+header.entry-header p.author{
+    text-transform: uppercase;
+    color: #000000;
+    margin-top: 10px;
+    font-family: 'Raleway', sans-serif;
+}
+p.author i{
+    font-size: 30px;
+    color: #f19f30;
+}
+div.entry-content p{
+    margin-bottom: 0;
+    line-height: 24px;
 }
