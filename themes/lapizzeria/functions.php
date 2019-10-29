@@ -4,6 +4,8 @@ function lapizzeria_setup(){
     add_theme_support('post-thumbnails');
 
     add_image_size('boxes', 437, 291, true);
+
+    add_image_size('specialties', 768, 515, true);
 }
 add_action('after_setup_theme','lapizzeria_setup');
 
@@ -57,7 +59,6 @@ function lapizzeria_specialties() {
         'not_found'          => __( 'No Pizzas found.', 'lapizzeria' ),
         'not_found_in_trash' => __( 'No Pizzas found in Trash.', 'lapizzeria' )
     );
-
     $args = array(
         'labels'             => $labels,
         'description'        => __( 'Description.', 'lapizzeria' ),
@@ -72,10 +73,9 @@ function lapizzeria_specialties() {
         'hierarchical'       => false,
         'menu_position'      => 6,
         'supports'           => array( 'title', 'editor', 'thumbnail' ),
-        'taxonomies'          => array( 'category' ),
+        'taxonomies'         => array( 'category' ),
     );
 
     register_post_type( 'specialties', $args );
 }
-
 add_action( 'init', 'lapizzeria_specialties' );
