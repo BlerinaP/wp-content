@@ -1,4 +1,9 @@
 <?php
+//Link or import the database.php file//
+
+require get_template_directory() . '/inc/database.php';
+
+
 //Add feature image
 function lapizzeria_setup(){
     add_theme_support('post-thumbnails');
