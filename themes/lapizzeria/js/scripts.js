@@ -13,5 +13,15 @@ $(document).ready(function() {
            $('nav.site-nav').hide();
        }
     });
+
+
+    //Fluidbox Plugin
+    jQuery('.gallery a').each(function(){
+        jQuery(this).attr({'data-fluidbox': ''});
+    });
+
+    if(jQuery('[data-fluidbox]').length > 0 ){
+        jQuery('[data-fluidbox]').fluidbox();
+    }
 });
 
