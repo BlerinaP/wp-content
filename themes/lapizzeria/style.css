@@ -200,7 +200,8 @@ nav.site-nav ul{
     }
 
 nav.site-nav ul li.current_page_item a,
-.single-specialties nav.site-nav ul li.menu-item-29 a{
+.single-specialties nav.site-nav ul li.menu-item-29 a,
+nav.site-nav ul li.current_page_parent a {
     border-bottom: 8px solid #a61206;
 }
 
@@ -594,6 +595,7 @@ form.searchform #s{
 .comment-respond form textarea{
     padding: 10px;
     width: calc(100% - 220px);
+    font-size: 18px ;
 }
 .comment-respond form input[type="submit"] {
     margin:0 auto;
@@ -621,3 +623,36 @@ p.logged-in-as a {
     text-align: center;
     display: block;
 }
+/**Comment list**/
+ol.commentlist{
+list-style: none;
+}
+ol.commentlist li.comment{
+    background-color: #e1e1e1;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+ol.commentlist li.comment cite{
+    color: #a61206;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+li.comment .comment-author{
+    margin-bottom: 10px;
+}
+li.comment a{
+    color: #a61206;
+    text-decoration: none;
+}
+li.comment ul.children{
+    list-style: none;
+}
+li.comment ul.children li {
+    background-color: #fff;
+    margin-top: 20px;
+
+}div.blog-img{
+    float: right;
+    margin-left: 20px;
+ }
