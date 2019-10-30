@@ -466,7 +466,8 @@ article.entry{
 header.entry-header{
     margin-top: 20px;
 }
-header.entry-header .date{
+header.entry-header .date,
+.entry-information .date{
     background-color: #f19f30;
     float: left;
     width: 70px;
@@ -475,12 +476,14 @@ header.entry-header .date{
     padding-top: 5px;
     margin-right: 20px;
 }
-header.entry-header .date time{
+header.entry-header .date time,
+.entry-information .date time{
     font-size: 30px;
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
 }
-header.entry-header .date span{
+header.entry-header .date span,
+.entry-information .date span{
   font-size: 16px;
     display: block;
     text-transform: uppercase;
@@ -495,11 +498,20 @@ header.entry-header h2{
     text-transform: uppercase;
     font-weight: 700;
 }
-header.entry-header p.author{
+header.entry-header p.author,
+.entry-information p.author{
     text-transform: uppercase;
     color: #000000;
     margin-top: 10px;
     font-family: 'Raleway', sans-serif;
+}
+.entry-information{
+    padding-top: 30px;
+}
+.entry-information p.author{
+    display: inline;
+    float: left;
+    margin-top: 38px;
 }
 p.author i{
     font-size: 30px;
