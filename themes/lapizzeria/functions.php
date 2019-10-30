@@ -8,6 +8,10 @@ function lapizzeria_setup(){
     add_image_size('specialties', 768, 515, true);
 
     add_image_size('blogsize' , 500, 350, true);
+
+    update_option('thumbnail_size_w', 253);
+
+    update_option('thumbnail_size_h', 164);
 }
 add_action('after_setup_theme','lapizzeria_setup');
 
