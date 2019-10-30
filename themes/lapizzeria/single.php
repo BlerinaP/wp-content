@@ -26,6 +26,9 @@
             <?php the_content(); ?>
         </main>
     </div>
+<div class="container comments">
+    <?php comment_form();?>
+</div>
 
 <?php endwhile; ?>
 
