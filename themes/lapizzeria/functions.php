@@ -3,6 +3,7 @@
 
 require get_template_directory() . '/inc/database.php';
 
+require get_template_directory() . '/inc/reservation.php';
 
 //Add feature image
 function lapizzeria_setup(){
