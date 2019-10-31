@@ -1,9 +1,13 @@
 <?php
-//Link or import the database.php file//
 
+//Link or import the database.php file// ( this contains the SQL Structure)
 require get_template_directory() . '/inc/database.php';
 
+//Handles the submission to the database
 require get_template_directory() . '/inc/reservation.php';
+
+//Creates options pages for  the theme!
+require get_template_directory() . '/inc/options.php';
 
 //Add feature image
 function lapizzeria_setup(){
