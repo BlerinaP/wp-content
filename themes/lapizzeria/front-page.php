@@ -40,7 +40,6 @@
     </div>
 
     <section class="ingridients">
-        <div>
             <div class="container">
                 <div class="container-grid">
                    <?php while(have_posts()): the_post();?>
@@ -50,13 +49,20 @@
                         <?php $url = get_page_by_title('About Us'); ?>
                         <a class="button primary"href="<?php echo get_permalink($url->ID); ?>">read more</a>
                     </div>
-                    <div class="columns2-4">
+                    <div class="columns2-4 image">
                         <img src="<?php the_field('ingredients_image');?>" alt="Fresh Ingredients">
                     </div>
-                <?php endwhile; ?>
+                  <?php endwhile; ?>
                 </div>
             </div>
-        </div>
+    </section>
+
+    <section class="container clear">
+        <h2 class="primary-text text-center">Gallery</h2>
+        <?php
+         $url = get_page_by_title('Gallery');
+         echo get_post_gallery($url->ID)
+        ?>
     </section>
 
 
