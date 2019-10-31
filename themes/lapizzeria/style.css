@@ -75,6 +75,14 @@ h4{
     background-color: #850700;
     transition: background-color .5s ease;
 }
+.secondary{
+    background-color: #f1b616;
+    transition: background-color .5s ease;
+    text-transform: uppercase;
+}
+.secondary:hover{
+    background-color: #dad14d;
+}
 .primary:hover{
     background-color: #a61206;
 }
@@ -87,12 +95,12 @@ header.site-header{
 div.logo{
     text-align: center;
 }
-@media only screen and (min-width: 768px){
+@media (min-width: 768px){
     div.logo {
         text-align: left;
     }
 }
-@media only screen and (min-width: 992px){
+@media  (min-width: 992px){
     div.logo {
         text-align: center;
     }
@@ -100,7 +108,7 @@ div.logo{
 img.logoimage{
     width: 250px;
 }
-@media only screen and (min-width: 768px){
+@media (min-width: 768px){
     header.site-header .container{
         position: relative;
     }
@@ -120,7 +128,7 @@ div.address p{
     font-size: 14px;
     text-align: center;
 }
-@media only screen and (min-width: 768px){
+@media  (min-width: 768px){
     div.address p{
         text-align: right;
     }
@@ -131,7 +139,7 @@ nav.socials ul{
     text-align: center;
     padding:0;
 }
-@media only screen and (min-width: 768px){
+@media (min-width: 768px){
     nav.socials ul{
         float: right;
     }
@@ -170,7 +178,7 @@ nav.socials li a[href*="instagram.com"]::before{
 nav.site-nav{
  display: none;
 }
-@media only screen and (min-width: 768px) {
+@media (min-width: 768px) {
     nav.site-nav{
         display: block;
     }
@@ -182,7 +190,7 @@ nav.site-nav ul{
     width: 100%;
     display: table;
 }
-@media only screen and (min-width: 768px) {
+@media (min-width: 768px) {
     nav.site-nav ul li {
         display: table-cell;
         width: 1%;
@@ -207,7 +215,7 @@ nav.site-nav ul li.current_page_parent a {
 
 /*Responsive menu button*/
 
-@media only screen and (max-width: 767px){
+@media (max-width: 767px){
    .mobile-menu a{
     height: 40px;
     line-height: 40px;
@@ -222,7 +230,7 @@ nav.site-nav ul li.current_page_parent a {
     font-family: 'Raleway', sans-serif;
   }
 }
-@media only screen and (min-width: 768px){
+@media (min-width: 768px){
     .mobile-menu a{
         display: none;
     }
@@ -255,18 +263,21 @@ nav.site-nav ul li.current_page_parent a {
     z-index: 2;
     position: relative;
 }
-@media only screen and(min-width: 768px) {
+@media (min-width: 768px) {
     .hero-text{
         width: 80%;
         margin: 0 auto;
     }
 }
-@media only screen and(min-width: 992px) {
+@media (min-width: 992px) {
     .hero-text{
         width: 60%;
     }
 }
-
+div.main-menu{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
 .main-content{
     padding: 60px;
     background-color: white;
@@ -284,7 +295,7 @@ nav.site-nav ul li.current_page_parent a {
     justify-content: center;
 }
 
-@media screen and (min-width: 768px){
+@media (min-width: 768px){
     .box-information{
      grid-template-columns: repeat(3, 1fr);
     }
@@ -295,7 +306,7 @@ nav.site-nav ul li.current_page_parent a {
     color: white;
     text-align: center;
 }
-@media screen and (min-width: 768px){
+@media (min-width: 768px){
     .single-box{
         grid-template-columns: unset;
         grid-template-rows: 1fr 1fr;
@@ -310,7 +321,7 @@ nav.site-nav ul li.current_page_parent a {
 .single-box:nth-child(3){
     background-color: #a61206;
 }
-@media screen and (min-width: 768px){
+@media (min-width: 768px){
     .single-box:nth-child(2) img{
      order: 2;
     }
@@ -329,7 +340,7 @@ nav.site-nav ul li.current_page_parent a {
 .content-box *{
     align-self: center;
 }
-@media screen and (min-width: 768px){
+@media (min-width: 768px){
     .content-box{
         grid-template: 20% 30% 30% 20%;
     }
@@ -695,7 +706,7 @@ form.reservation-form .field{
 form.reservation-form .field input,
 form.reservation-form .field textarea {
     width: 100%;
-    border: 3px solid #000000;
+    border: 2px solid #000000;
     padding: 15px 10px;
     font-size: 16px;
 }
@@ -716,4 +727,27 @@ form.reservation-form ::-ms-input-placeholder{
 }
 form.reservation-form input[type="submit"] {
     border: none;
+}
+/**Front Page**/
+
+.home div.hero {
+    height: 750px;
+}
+@media(min-width: 768px){
+  .home .main-content{
+      margin-top: 0;
+  }
+    .home div.hero-text{
+        width: 55%;
+        text-align: center;!important;
+    }
+}
+@media(min-width: 992px){
+    .home div.hero-text{
+        width: 40%;
+    }
+}
+.home .hero-text p{
+    line-height: 40px;
+    font-size: 18px;
 }
