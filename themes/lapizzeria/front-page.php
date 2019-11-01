@@ -64,6 +64,19 @@
          echo get_post_gallery($url->ID)
         ?>
     </section>
+    <section class="location-reservation clear container">
+        <div class="container-grid">
+            <div class="columns2-4">
+                <div id="map">
+                map here
+                </div>
+            </div>
+                <div class="columns2-4">
+                    <?php get_template_part('templates/reservation'); ?>
+                </div>
+        </div>
+
+    </section>
 
 
 
