@@ -8,10 +8,33 @@ function lapizzeria_options(){
 
   add_action('admin_menu','lapizzeria_options');
 
+    function lapizzeria_settings(){
+        register_setting('lapizzeria_options_gmaps','lapizzeria_gmap_latitude');
+    }
+    add_action('init','lapizzeria_settings');
 
-   function lapizzeria_adjustments(){
+   function lapizzeria_adjustments(){?>
 
-   }
+        <div class="wrap">
+            <h1>La Pizzeria Adjustments</h1>
+            <form action="options.php" method="post">
+                <?php
+                    settings_fields('lapizzeria_options_gmaps');
+                    do_settings_sections('lapizzeria_options_gmaps');
+                ?>
+                <h2>Google Maps</h2>
+                <table class="form-table">
+                    <tr valign="top">
+                        <th scope="row">Latitude</th>
+                        <td>
+                            <input type="text" name="lapizzeria_gmap_latitude" value="<?php echo esc_attr( get_option('lapizzeria_gmap_latitude') );?>" >
+                        </td>
+                    </tr>
+                </table>
+                <?php submit_button(); ?>
+            </form>
+        </div>
+  <?php }
 
    function lapizzeria_reservations() { ?>
     <div class="wrap">
