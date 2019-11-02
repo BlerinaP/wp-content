@@ -77,15 +77,14 @@
                 </div>
         </div>
     </section>
+
     <style>
         #map{
             height: 400px;
         }
     </style>
-
-    <script>
-
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZijPWJzs5EZvKqFVv6-mYGTKaiJoX7oE&callback=initMap"
+    <?php $apikey = esc_html(get_option('lapizzeria_gmap_apikey'));?>
+    <script src="https://maps.googleapis.com/maps/api/js?key . $apikey . =&callback=initMap"
             async defer></script>
+
 <?php get_footer();?>

@@ -3,12 +3,12 @@ var map;
 window.initMap = function(){
 
     var latLng = {
-        lat: 42.667542,
-        lng: 21.166191
+        lat: parseFloat( options.latitude ),
+        lng: parseFloat( options.longitude )
     };
     map = new google.maps.Map(document.getElementById('map'), {
         center: latLng,
-        zoom: 8
+        zoom: parseInt( options.zoom )
     });
 
     var maker = new google.maps.Marker({
@@ -54,7 +54,6 @@ $(document).ready(function() {
             displayMap(300);
         }
     }
-    var breakpoint = 760;
     $(window).resize(function () {
         if($(document).width() >= breakpoint){
             displayMap(0);
