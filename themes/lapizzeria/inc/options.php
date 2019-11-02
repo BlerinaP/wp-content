@@ -9,11 +9,18 @@ function lapizzeria_options(){
   add_action('admin_menu','lapizzeria_options');
 
     function lapizzeria_settings(){
+        //Google map group
         register_setting('lapizzeria_options_gmaps','lapizzeria_gmap_latitude');
         register_setting('lapizzeria_options_gmaps','lapizzeria_gmap_longitude');
         register_setting('lapizzeria_options_gmaps','lapizzeria_gmap_zoom');
         register_setting('lapizzeria_options_gmaps','lapizzeria_gmap_apikey');
+
+
+        //Infos group
+        register_setting('lapizzeria_options_info','lapizzeria_address');
+        register_setting('lapizzeria_options_info','lapizzeria_phonenumber');
     }
+
     add_action('init','lapizzeria_settings');
 
    function lapizzeria_adjustments(){?>
@@ -52,6 +59,31 @@ function lapizzeria_options(){
                         </td>
                     </tr>
                 </table>
+
+                <?php
+                settings_fields('lapizzeria_options_info');
+                do_settings_sections('lapizzeria_options_info');
+                ?>
+                <h2>Info Adjustments</h2>
+
+                <table class="form-table">
+                    <tr valign="top">
+                        <th scope="row">Adress</th>
+                        <td>
+                            <input type="text" name="lapizzeria_address" value="<?php echo esc_attr( get_option('lapizzeria_address') );?>" >
+                        </td>
+                    </tr>
+                </table>
+
+                <table class="form-table">
+                    <tr valign="top">
+                        <th scope="row">Phone Number</th>
+                        <td>
+                            <input type="text" name="lapizzeria_phonenumber" value="<?php echo esc_attr( get_option('lapizzeria_phonenumber') );?>" >
+                        </td>
+                    </tr>
+                </table>
+
                 <?php submit_button(); ?>
             </form>
         </div>
