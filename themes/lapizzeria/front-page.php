@@ -64,11 +64,12 @@
          echo get_post_gallery($url->ID)
         ?>
     </section>
+
     <section class="location-reservation clear container">
         <div class="container-grid">
             <div class="columns2-4">
                 <div id="map">
-                map here
+                    map is here
                 </div>
             </div>
                 <div class="columns2-4">
@@ -76,24 +77,15 @@
                 </div>
         </div>
     </section>
-
     <style>
         #map{
             height: 400px;
         }
     </style>
+
     <script>
-        var map;
-        function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: -34.397, lng: 150.644},
-                zoom: 8
-            });
-        }
+
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZijPWJzs5EZvKqFVv6-mYGTKaiJoX7oE&callback=initMap"
             async defer></script>
-
-
-
 <?php get_footer();?>

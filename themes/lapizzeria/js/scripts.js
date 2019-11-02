@@ -1,3 +1,11 @@
+
+var map;
+window.initMap = function(){
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 42.667542, lng: 21.166191},
+        zoom: 8
+    });
+}
 $ = jQuery.noConflict();
 
 $(document).ready(function() {
@@ -25,3 +33,31 @@ $(document).ready(function() {
     }
 });
 
+//Adapt Map
+    var breakpoint = 760;
+    var map = $('#map');
+    if(map.length > 0){
+        if($(document).width() >= breakpoint){
+            displayMap(0);
+        } else{
+            displayMap(300);
+        }
+    }
+    var breakpoint = 760;
+    $(window).resize(function () {
+        if($(document).width() >= breakpoint){
+            displayMap(0);
+        } else{
+            displayMap(300);
+        }
+    });
+ function displayMap(value){
+  if(value == 0){
+      var locationSection = $('.location-reservation');
+      var locationHeight = locationSection.height();
+      $('#map').css({'height': locationHeight});
+  } else {
+      $('#map').css({'height': value});
+  }
+
+ }
