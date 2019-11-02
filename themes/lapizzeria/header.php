@@ -8,6 +8,12 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-title" content="La Pizzeria Restaurant">
         <link rel="apple-touch-icon" href="<?php echo get_template_directory() ?>/apple-touch-icon.jpg">
+
+        <!----Make this Android compatible--->
+        <meta name="theme-color" content="#a61206">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="application-name" content="La Pizzeria Restaurant">
+        <link rel="icon" type="image/png" href="<?php echo get_template_directory() ?>/icon.png" sizes="192x192">
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
