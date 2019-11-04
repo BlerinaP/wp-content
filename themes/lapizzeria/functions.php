@@ -10,22 +10,34 @@ require get_template_directory() . '/inc/reservation.php';
 require get_template_directory() . '/inc/options.php';
 
 //Add feature image
-function lapizzeria_setup(){
-    add_theme_support('post-thumbnails');
+    function lapizzeria_setup(){
+        add_theme_support('post-thumbnails');
 
-    add_image_size('boxes', 437, 291, true);
+        add_image_size('boxes', 437, 291, true);
 
-    add_image_size('specialties', 768, 515, true);
+        add_image_size('specialties', 768, 515, true);
 
-    add_image_size('blogsize' , 500, 350, true);
+        add_image_size('blogsize' , 500, 350, true);
 
-    update_option('thumbnail_size_w', 253);
+        update_option('thumbnail_size_w', 253);
 
-    update_option('thumbnail_size_h', 164);
+        update_option('thumbnail_size_h', 164);
 
-    add_image_size('specialty_portrait' , 435, 530, true);
-}
-add_action('after_setup_theme','lapizzeria_setup');
+        add_image_size('specialty_portrait' , 435, 530, true);
+
+    }
+    add_action('after_setup_theme','lapizzeria_setup');
+
+    function lapizzeria_custom_logo(){
+        $logo = array(
+            'height' => 200,
+            'width' => 250
+        );
+
+        add_theme_support('custom-logo',$logo);
+    }
+    add_action('after_setup_theme','lapizzeria_custom_logo');
+
 
 function lapizzeria_styles(){
     // adding stylesheet( register stylesheet)
