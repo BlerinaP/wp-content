@@ -1,4 +1,12 @@
 <?php
+    function lapizzeria_delete_reservation() {
+
+
+        die(json_encode($_POST));
+    }
+    add_action('wp_ajax_lapizzeria_delete_reservation', 'lapizzeria_delete_reservation');
+
+
  function lapizzeria_save_reservation() {
     global $wpdb;
     if(isset($_POST['reservation']) && $_POST['hidden'] == "1"){
