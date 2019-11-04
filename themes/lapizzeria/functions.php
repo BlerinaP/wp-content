@@ -1,5 +1,6 @@
 <?php
 
+
 //Link or import the database.php file// ( this contains the SQL Structure)
 require get_template_directory() . '/inc/database.php';
 
@@ -90,7 +91,11 @@ function lapizzeria_styles(){
     add_action('wp_enqueue_scripts','lapizzeria_styles');
 
         function lapizzeria_admin_scripts(){
+
+        wp_enqueue_style('sweetalert', get_template_directory_uri() . '/css/sweetalert2.min.css', array(), '1.0.0');
         wp_enqueue_script('adminjs',get_template_directory_uri() . '/js/admin_ajax.js', array('jquery'),'1.0.0' ,true);
+        wp_enqueue_script('sweetalert.js',get_template_directory_uri() . '/js/sweetalert2.min.js', array('jquery'),'1.0.0' ,true);
+
 
         wp_localize_script(
             'adminjs',
