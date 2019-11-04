@@ -6,9 +6,20 @@
             $id_reservation = $_POST['id'];
 
             $result = $wpdb->delete($table, array('id' => $id_reservation), array('%d'));
+
+            if($result == 1){
+                $response = array(
+                    'response' => 'success',
+                    'id' => $id_reservation
+                );
+            } else {
+                $response = array(
+                    'response' => 'error'
+                );
+            }
         endif;
 
-        die(json_encode($result);
+        die(json_encode($response));
     }
     add_action('wp_ajax_lapizzeria_delete_reservation', 'lapizzeria_delete_reservation');
 

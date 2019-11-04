@@ -16,7 +16,11 @@ $(document).ready(function() {
          },
             url: admin_ajax.ajaxurl,
             success: function(data){
-                console.log(data);
+                var result = JSON.parse(data);
+                if(result.response == 'success'){
+                   jQuery("[data-reservation='"+ result.id +"']").parent().parent().remove();
+                   alert("Reservation Removed!!");
+                }
             }
       });
    });
