@@ -34,6 +34,7 @@ function lapizzeria_styles(){
     wp_register_style('fontawesome', get_template_directory_uri() . '/css/font-awesome.css',array(), '4.7.0');
     wp_register_style('style', get_template_directory_uri() . '/style.css',array('normalize'), '1.0');
     wp_register_style('fluidboxcss', get_template_directory_uri() . '/css/fluidbox.min.css',array(), '4.7.0');
+    wp_register_style('datetime-local', get_template_directory_uri() . '/css/datetime-local-polyfill.css',array(), '1.0.0');
 
     //Than we have to enqueue stylesheet that has been registered
     wp_enqueue_style('normalize');
@@ -41,17 +42,27 @@ function lapizzeria_styles(){
     wp_enqueue_style('style');
     wp_enqueue_style('googlefont');
     wp_enqueue_style('fluidboxcss');
+    wp_enqueue_style('datetime-local');
 
 
     //adding scripts//
-    wp_register_script('script',get_template_directory_uri() . '/js/scripts.js','1.0.0' ,true);
+
     wp_register_script('fluidboxjs',get_template_directory_uri() . '/js/jquery.fluidbox.min.js','1.0.0' ,true);
+    wp_register_script('datetime-local-polyfill',get_template_directory_uri() . '/js/datetime-local-polyfill.min.js',array('jquery','jquery-ui-core','jquery-ui-datepicker','modernizr'),'1.0.0' ,true);
+    wp_register_script('modernizr','https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', array('jquery'),'2.8.3',true);
+    wp_register_script('script',get_template_directory_uri() . '/js/scripts.js','1.0.0' ,true);
 
 
     //Than we have to enqueue java scripts files that has been registered//
     wp_enqueue_script('jquery');
-    wp_enqueue_script('script');
+    wp_enqueue_script('jquery-ui-core');
+    wp_enqueue_script('jquery-ui-datepicker');
+    wp_enqueue_script('datetime-local-polyfill');
+    wp_enqueue_script('modernizr');
     wp_enqueue_script('fluidboxjs');
+    wp_enqueue_script('script');
+
+
 
     wp_localize_script(
         'script',
@@ -62,7 +73,6 @@ function lapizzeria_styles(){
             'zoom' => esc_html( get_option('lapizzeria_gmap_zoom') )
         )
     );
-
 
 }
 add_action('wp_enqueue_scripts','lapizzeria_styles');

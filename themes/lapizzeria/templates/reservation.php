@@ -5,7 +5,7 @@
             <input type="text" name="name" placeholder="Name" required>
         </div>
         <div class="field">
-            <input type="datetime-local" name="date" placeholder="Date" required>
+            <input type="datetime-local" name="date" placeholder="Date" step="300" required>
         </div>
         <div class="field">
             <input type="email" name="email" placeholder="E-mail" required>
