@@ -76,8 +76,6 @@ function lapizzeria_styles(){
     wp_enqueue_script('fluidboxjs');
     wp_enqueue_script('script');
 
-
-
     wp_localize_script(
         'script',
         'options',
@@ -87,67 +85,72 @@ function lapizzeria_styles(){
             'zoom' => esc_html( get_option('lapizzeria_gmap_zoom') )
         )
     );
-
 }
-add_action('wp_enqueue_scripts','lapizzeria_styles');
+
+    add_action('wp_enqueue_scripts','lapizzeria_styles');
+
+        function lapizzeria_admin_scripts(){
+        wp_enqueue_script('adminjs',get_template_directory_uri() . '/js/admin_ajax.js', array('jquery'),'1.0.0' ,true);
+     }
+    add_action('admin_enqueue_scripts','lapizzeria_admin_scripts');
 
 //Add menus
-function lapizzeria_menus(){
-  register_nav_menus(array(
-     'header-menu' => __('Header Menu','lapizza'),
-      'social-menu' => __('Social Menu','lapizza')
-  ));
-}
-add_action('init','lapizzeria_menus');
+    function lapizzeria_menus(){
+      register_nav_menus(array(
+         'header-menu' => __('Header Menu','lapizza'),
+          'social-menu' => __('Social Menu','lapizza')
+      ));
+    }
+    add_action('init','lapizzeria_menus');
 
-function lapizzeria_specialties() {
-    $labels = array(
-        'name'               => _x( 'Pizzas', 'lapizzeria' ),
-        'singular_name'      => _x( 'Pizza', 'post type singular name', 'lapizzeria' ),
-        'menu_name'          => _x( 'Pizzas', 'admin menu', 'lapizzeria' ),
-        'name_admin_bar'     => _x( 'Pizzas', 'add new on admin bar', 'lapizzeria' ),
-        'add_new'            => _x( 'Add New', 'book', 'lapizzeria' ),
-        'add_new_item'       => __( 'Add New Pizza', 'lapizzeria' ),
-        'new_item'           => __( 'New Pizzas', 'lapizzeria' ),
-        'edit_item'          => __( 'Edit Pizzas', 'lapizzeria' ),
-        'view_item'          => __( 'View Pizzas', 'lapizzeria' ),
-        'all_items'          => __( 'All Pizzas', 'lapizzeria' ),
-        'search_items'       => __( 'Search Pizzas', 'lapizzeria' ),
-        'parent_item_colon'  => __( 'Parent Pizzas:', 'lapizzeria' ),
-        'not_found'          => __( 'No Pizzas found.', 'lapizzeria' ),
-        'not_found_in_trash' => __( 'No Pizzas found in Trash.', 'lapizzeria' )
-    );
-    $args = array(
-        'labels'             => $labels,
-        'description'        => __( 'Description.', 'lapizzeria' ),
-        'public'             => true,
-        'publicly_queryable' => true,
-        'show_ui'            => true,
-        'show_in_menu'       => true,
-        'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'specialties' ),
-        'capability_type'    => 'post',
-        'has_archive'        => true,
-        'hierarchical'       => false,
-        'menu_position'      => 6,
-        'supports'           => array( 'title', 'editor', 'thumbnail' ),
-        'taxonomies'         => array( 'category' ),
-    );
+    function lapizzeria_specialties() {
+        $labels = array(
+            'name'               => _x( 'Pizzas', 'lapizzeria' ),
+            'singular_name'      => _x( 'Pizza', 'post type singular name', 'lapizzeria' ),
+            'menu_name'          => _x( 'Pizzas', 'admin menu', 'lapizzeria' ),
+            'name_admin_bar'     => _x( 'Pizzas', 'add new on admin bar', 'lapizzeria' ),
+            'add_new'            => _x( 'Add New', 'book', 'lapizzeria' ),
+            'add_new_item'       => __( 'Add New Pizza', 'lapizzeria' ),
+            'new_item'           => __( 'New Pizzas', 'lapizzeria' ),
+            'edit_item'          => __( 'Edit Pizzas', 'lapizzeria' ),
+            'view_item'          => __( 'View Pizzas', 'lapizzeria' ),
+            'all_items'          => __( 'All Pizzas', 'lapizzeria' ),
+            'search_items'       => __( 'Search Pizzas', 'lapizzeria' ),
+            'parent_item_colon'  => __( 'Parent Pizzas:', 'lapizzeria' ),
+            'not_found'          => __( 'No Pizzas found.', 'lapizzeria' ),
+            'not_found_in_trash' => __( 'No Pizzas found in Trash.', 'lapizzeria' )
+        );
+        $args = array(
+            'labels'             => $labels,
+            'description'        => __( 'Description.', 'lapizzeria' ),
+            'public'             => true,
+            'publicly_queryable' => true,
+            'show_ui'            => true,
+            'show_in_menu'       => true,
+            'query_var'          => true,
+            'rewrite'            => array( 'slug' => 'specialties' ),
+            'capability_type'    => 'post',
+            'has_archive'        => true,
+            'hierarchical'       => false,
+            'menu_position'      => 6,
+            'supports'           => array( 'title', 'editor', 'thumbnail' ),
+            'taxonomies'         => array( 'category' ),
+        );
 
-    register_post_type( 'specialties', $args );
-}
-add_action( 'init', 'lapizzeria_specialties' );
+        register_post_type( 'specialties', $args );
+    }
+    add_action( 'init', 'lapizzeria_specialties' );
 
 //Widget Zone//
-function lapizzeria_widgets(){
-    register_sidebar(array(
-        'name' => 'Blog Sidebar',
-        'id' => 'blog_sidebar',
-        'before_widget' => '<div class="widget">',
-        'after_widget' => '</div>',
-        'before_title' => '<h4>',
-        'after_title' => '</h4>'
-    ));
-}
-add_action('widgets_init','lapizzeria_widgets');
+    function lapizzeria_widgets(){
+        register_sidebar(array(
+            'name' => 'Blog Sidebar',
+            'id' => 'blog_sidebar',
+            'before_widget' => '<div class="widget">',
+            'after_widget' => '</div>',
+            'before_title' => '<h4>',
+                'after_title' => '</h4>'
+        ));
+    }
+    add_action('widgets_init','lapizzeria_widgets');
 
