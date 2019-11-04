@@ -2,7 +2,6 @@
     <html>
     <head>
         <meta charset="UTF-8">
-        <title>La Pizzeria</title>
         <meta name="viewport" content="width-device-width, intial-scale=1"
          <!----Make this IOS compatible--->
         <meta name="apple-mobile-web-app-capable" content="yes">

@@ -25,6 +25,8 @@ require get_template_directory() . '/inc/options.php';
 
         add_image_size('specialty_portrait' , 435, 530, true);
 
+        add_theme_support('title-tag');
+
     }
     add_action('after_setup_theme','lapizzeria_setup');
 
