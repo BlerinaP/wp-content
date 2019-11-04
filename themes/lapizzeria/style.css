@@ -16,6 +16,7 @@ html{
 }
 body{
     margin: 0;
+    width: 100%;
 }
 *, *:before, *:after{
     box-sizing: inherit;
@@ -142,6 +143,28 @@ nav.socials ul{
 @media (min-width: 768px){
     nav.socials ul{
         float: right;
+    }
+}
+@media (min-width: 992px) {
+    nav.site-nav ul li.menu-item-has-children {
+        position: relative;
+    }
+    nav.site-nav ul li.menu-item-has-children ul.sub-menu {
+        display: none;
+    }
+
+    nav.site-nav ul li.menu-item-has-children:hover ul.sub-menu {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        background-color: white;
+    }
+    nav.site-nav ul li.menu-item-has-children:hover ul.sub-menu li {
+        display: block;
+        padding-left: 30px;
+        padding-bottom: 20px;
     }
 }
 nav.socials ul li{
@@ -431,7 +454,7 @@ img{
     padding: 0 60px;
 }
 .specialty-content{
-    padding: 20px;
+    padding: 20px!important;
 }
 .specialty-content a{
     color: black;
@@ -702,6 +725,7 @@ form.reservation-form h2{
 form.reservation-form .field{
     margin-bottom: 20px;
     width: 100%;
+    position: relative;
 }
 form.reservation-form .field input,
 form.reservation-form .field textarea {
@@ -851,24 +875,23 @@ section.ingridients .image{
 section.ingridients .image img{
     width: 80%;
 }
-
-/**Location and reservation **/
+/*Rservation form* Location*/
 section.location-reservation{
     background-image: url("img/bg_ingredients.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     margin-top: 50px;
-    padding: 50px 0;
+
 }
 .home .reservation-info{
     margin: 0;
-    color: white;
-    padding-right: 30px;
+    color: #FFFFFF;
+    padding: 50px;
 }
 .home .reservation-form h2{
     text-align: center;
-    font-size: 30px;
+    font-size: 34px;
     margin: 0 0 20px 0;
     font-weight: 900;
 }
@@ -876,20 +899,23 @@ section.location-reservation{
 .home .reservation-form textarea{
     background-color: transparent;
     border: 4px solid #FFFFFF!important;
-    color: white!important;
+    color: #FFFFFF!important;
 }
 .home .reservation-form input[type='submit']{
     background-color: #a61206;
     border: none!important;
 }
-form.reservation-form ::-webkit-input-placeholder{
+.home form.reservation-form ::-webkit-input-placeholder{
     color: white!important;
 }
-form.reservation-form :moz-placeholder{
+.home form.reservation-form :moz-placeholder{
     color: white!important;
 }
-form.reservation-form ::moz-placeholder{
+.home form.reservation-form ::moz-placeholder{
     color: white!important;
 }
-form.reservation-form ::-ms-input-placeholder{
-    color: white!important;
+.home form.reservation-form ::-ms-input-placeholder {
+    color: white !important;
+}
+
+
