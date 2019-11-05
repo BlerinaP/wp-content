@@ -66,6 +66,7 @@ function lapizzeria_styles(){
     wp_register_script('datetime-local-polyfill',get_template_directory_uri() . '/js/datetime-local-polyfill.min.js',array('jquery','jquery-ui-core','jquery-ui-datepicker','modernizr'),'1.0.0' ,true);
     wp_register_script('modernizr','https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', array('jquery'),'2.8.3',true);
     wp_register_script('script',get_template_directory_uri() . '/js/scripts.js','1.0.0' ,true);
+    wp_register_script('recaptcha','https://www.google.com/recaptcha/api.js');
 
 
     //Than we have to enqueue java scripts files that has been registered//
@@ -76,6 +77,7 @@ function lapizzeria_styles(){
     wp_enqueue_script('modernizr');
     wp_enqueue_script('fluidboxjs');
     wp_enqueue_script('script');
+    wp_enqueue_script('recaptcha');
 
     wp_localize_script(
         'script',

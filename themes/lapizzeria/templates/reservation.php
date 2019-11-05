@@ -16,6 +16,9 @@
         <div class="field">
             <textarea name="message" placeholder="Message" requires></textarea>
         </div>
+
+        <div class="g-recaptcha" data-sitekey="6LeDGsEUAAAAAOi28voqwQPw8JUl9uvDunGN9c6i"></div>
+
         <input type="submit" name="reservation" class="button" value="Send">
         <input type="hidden" name="hidden" value="1">
     </form>
